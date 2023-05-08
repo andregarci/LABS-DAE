@@ -23,7 +23,7 @@ class AlumnoView(View):
             formAlumno.save()
             return redirect('/')
 
-class AlumnoDeleteView(View):
+class AlumnoeEliminarView(View):
     def post(self, request, pk):
         alumno = get_object_or_404(TblAlumno, pk=pk)
         alumno.delete()
@@ -47,7 +47,7 @@ class ProfesorView(View):
         else:
             return render(request, 'profesores.html', {'formProfesor': formProfesor})
 
-class ProfesorDeleteView(View):
+class ProfesorEliminarView(View):
     def post(self, request, pk):
         profesor = get_object_or_404(TblProfesor, pk=pk)
         profesor.delete()
